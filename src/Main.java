@@ -4,18 +4,28 @@ import sweets.BubbleGum;
 import sweets.ChocolateCandy;
 import sweets.LollipopCandy;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static calculations.Search.searchByWeight;
+import static calculations.Sort.sortCandyByWeight;
+import static calculations.Search.getFullWeight;
+
 public class Main {
 
     public static void main(String[] args) {
         LollipopCandy lollipopCandy = new LollipopCandy("Леденец", 25, 70);
         BubbleGum bubbleGum = new BubbleGum("Хуба-буба", 56, 90);
         ChocolateCandy chocolateCandy = new ChocolateCandy("Аленка", 15, 50);
-        Candy[] candies = {lollipopCandy, chocolateCandy, bubbleGum};
+        List<Candy> candies = new ArrayList<>();
+        candies.add(lollipopCandy);
+        candies.add(bubbleGum);
+        candies.add(chocolateCandy);
         ChildrenPresent childrenPresent = new ChildrenPresent(candies);
         System.out.println(childrenPresent);
-        childrenPresent.getFullWeight();
-        childrenPresent.searchByWeight(20, 50);
-        childrenPresent.sortCandyByWeight(candies);
+        sortCandyByWeight(childrenPresent);
+        getFullWeight(childrenPresent);
+        searchByWeight(15, 25, childrenPresent);
 
 
     }
