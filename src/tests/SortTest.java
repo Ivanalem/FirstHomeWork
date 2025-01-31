@@ -24,15 +24,9 @@ class SortTest {
         candies.add(bubbleGum);
         candies.add(chocolateCandy);
         ChildrenPresent childrenPresent = new ChildrenPresent(candies);
-        sortCandyByWeight(childrenPresent);
-        Assertions.assertEquals(candies, sortCandyByWeight(childrenPresent));
-    }
-
-    public static List<Candy> sortCandyByWeight(ChildrenPresent childrenPresent) {
         List<Candy> newList = new ArrayList<>();
         childrenPresent.getCandies().sort(Comparator.comparing(Candy::getWeight));
         newList.addAll(childrenPresent.getCandies());
-        System.out.println("\nCandies were sorted by weight: " + childrenPresent.getCandies());
-        return newList;
+        Assertions.assertEquals(childrenPresent.getCandies(), newList);
     }
 }
