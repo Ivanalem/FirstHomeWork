@@ -5,11 +5,12 @@ import sweets.ChocolateCandy;
 import sweets.LollipopCandy;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
+import static calculations.Search.getFullWeight;
 import static calculations.Search.searchByWeight;
 import static calculations.Sort.sortCandyByWeight;
-import static calculations.Search.getFullWeight;
 
 public class Main {
 
@@ -22,7 +23,7 @@ public class Main {
         candies.add(bubbleGum);
         candies.add(chocolateCandy);
         ChildrenPresent childrenPresent = new ChildrenPresent(candies);
-        System.out.println(childrenPresent);
+        System.out.println("В детском подарке содержится:" + Arrays.asList(childrenPresent.getCandies()));
         sortCandyByWeight(childrenPresent);
         getFullWeight(childrenPresent);
         searchByWeight(15, 25, childrenPresent);

@@ -14,10 +14,4 @@ public class ChildrenPresent {
     public List<Candy> getCandies() {
         return candies;
     }
-
-
-    @Override
-    public String toString() {
-        return "В детском подарке содержится: " + getCandies();
-    }
 }
