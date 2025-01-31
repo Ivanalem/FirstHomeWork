@@ -2,6 +2,7 @@ package abstractClass;
 
 public abstract class Candy {
 
+
     private String name;
     private int weight;
     private int sugarContent;
