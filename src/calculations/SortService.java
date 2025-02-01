@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class Sort {
+public class SortService {
 
     //Sort by weight
-    public static List<Candy> sortCandyByWeight(ChildrenPresent childrenPresent) {
+    public List<Candy> sortCandyByWeight(ChildrenPresent childrenPresent) {
         List<Candy> newList = new ArrayList<>();
         childrenPresent.getCandies().sort(Comparator.comparing(Candy::getWeight));
         newList.addAll(childrenPresent.getCandies());

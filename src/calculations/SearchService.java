@@ -6,11 +6,11 @@ import newYearPresent.ChildrenPresent;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Search {
+public class SearchService {
 
 
     //Search by weight
-    public static List<Candy> searchByWeight(int enterParam, int enterParam2, ChildrenPresent childrenPresent) {
+    public List<Candy> searchByWeight(int enterParam, int enterParam2, ChildrenPresent childrenPresent) {
         List<Candy> newList = new ArrayList<>();
         for (Candy candy : childrenPresent.getCandies()) {
             if (candy.getWeight() >= enterParam && candy.getWeight() <= enterParam2) {
@@ -23,7 +23,7 @@ public class Search {
     }
 
     //Total weight of the gift
-    public static int getFullWeight(ChildrenPresent childrenPresent) {
+    public int getFullWeight(ChildrenPresent childrenPresent) {
         int sumWeight = 0;
         for (Candy candyFullWeight : childrenPresent.getCandies()) {
             sumWeight += candyFullWeight.getWeight();
